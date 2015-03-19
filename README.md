@@ -5,11 +5,11 @@ The repository to fixing the vagrant box (linux) root size issue
 
 Due to different linux system, you need first manually find out three parameters. 
 
-1. start the vagrant box with init setting. 
+1) start the vagrant box with init setting. 
 
     vagrant up fillup/centos-6.5-x86_64-minimal --provider=virtualbox
 
-2. find vm id
+2) find vm id
 
     vboxmanage list vms |awk -F \" 'END{print $2}' 
 
@@ -32,27 +32,27 @@ Storage Controller Port Count (1):      1
 Storage Controller Bootable (1):        on
 ```
 
-3. login the box
+3) login the box
 
     vagrant ssh
 
-4. find "VG name"
+4) find "VG name"
 
     vgdisplay
 
 If there is no output, run `vgscan` or `pvscan`, then run `vgdisplay` again.
 
-5. find mapper name
+5) find mapper name
 
     cd /dev/mapper
     ls -l 
 
 you can get the name as "VolGroup-lv_root"  
 
-6. replace the finding in resize.sh file.
+6) replace the finding in resize.sh file.
 
-7. destroy the box
+7) destroy the box
 
     vagrant destroy
 
-8. Now you can start the vagrant box properly with your expect size on root.
+8) Now you can start the vagrant box properly with your expect size on root.
