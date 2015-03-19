@@ -56,3 +56,5 @@ you can get the name as "VolGroup-lv_root"
     vagrant destroy
 
 8) Now you can start the vagrant box properly with your expect size on root.
+
+    vagrant up
