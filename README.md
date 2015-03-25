@@ -3,7 +3,7 @@ The repository to fixing the vagrant box (linux) root size issue
 
 # how to use.
 
-Due to different linux system, you need first manually find out three parameters. Use "fillup/centos-6.5-x86_64-minimal" as sample, its root filesystem is 3GB.
+Due to different linux system, you need first manually find out three parameters. Use `fillup/centos-6.5-x86_64-minimal` as sample, its root filesystem is 3GB.
 
 1) start the vagrant box with init setting. 
 
