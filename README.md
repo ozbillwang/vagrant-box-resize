@@ -11,9 +11,10 @@ Due to different linux system, you need first manually find out three parameters
 
 2) find vm id
 
-    vboxmanage list vms |awk -F \" 'END{print $2}' 
+    $ vboxmanage list vms |awk -F \" 'END{print $2}' 
+    vagrant-box-resize_default_1426739272237_35766
 
-You will get some output as below, and in this case, it will be SATA. Then update it in Vagrantfile
+Use the vm id with below `showvminfo` command. You will get some output as below, and in this case, it will be SATA. Then update it in Vagrantfile
 
 ```
 $ vboxmanage showvminfo vagrant-box-resize_default_1426739272237_35766|grep Storage
