@@ -14,7 +14,7 @@ Due to different linux system, you need first manually find out three parameters
     $ vboxmanage list vms |awk -F \" 'END{print $2}' 
     vagrant-box-resize_default_1426739272237_35766
 
-Use the vm id with below `showvminfo` command. You will get some output as below, and in this case, it will be SATA. Then update it in Vagrantfile
+Use the vm id with below `showvminfo` command. In this case, it will be `SATA`. Then update it in Vagrantfile, next to `'--storagectl'`
 
 ```
 $ vboxmanage showvminfo vagrant-box-resize_default_1426739272237_35766|grep Storage
@@ -48,7 +48,7 @@ If there is no output, run `vgscan` or `pvscan`, then run `vgdisplay` again.
     cd /dev/mapper
     ls -l 
 
-you can get the name as "VolGroup-lv_root"  
+you get the name as `VolGroup-lv_root` or other name, depend on.   
 
 6) replace the finding in resize.sh file.
 
